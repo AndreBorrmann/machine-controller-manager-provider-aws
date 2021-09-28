@@ -126,6 +126,7 @@ func (d *Driver) CreateMachine(ctx context.Context, req *driver.CreateMachineReq
 			DeleteOnTermination:      netIf.DeleteOnTermination,
 			Description:              netIf.Description,
 			SubnetId:                 aws.String(netIf.SubnetID),
+			Ipv6AddressCount:         aws.Int64(1),
 		}
 
 		if netIf.DeleteOnTermination == nil {
